@@ -1,0 +1,3 @@
+[submodule "laravel-react"]
+	path = laravel-react
+	url = https://github.com/Alina32/laravel-react.git
