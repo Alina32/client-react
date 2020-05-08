@@ -112,7 +112,7 @@ class NewCity extends Component {
 
     render() {
         return (
-        <Container style={{width:'800px'}}>
+        <Container style={{width:'800px', marginBottom: '100px', marginTop: '80px'}}>
          
             <Message style={{borderRadius:'0px'}}
                 attached
@@ -121,8 +121,8 @@ class NewCity extends Component {
                 content="Вы можете добавить новый город или отредактировать запись"
                 color="white"
             />
-            <Segment style={{borderRadius:'0px'}}>
-                <Form className='attached fluid container' onSubmit={this.onSubmit}>
+           
+                <Form className='attached fluid segment' onSubmit={this.onSubmit}>
                 
                 	<Form.Field
                 		control={Input}
@@ -177,7 +177,8 @@ class NewCity extends Component {
                         ''
                     )}
                
-                </Form>             
+                </Form>   
+
                 <Item.Group divided style={{ maxWidth: '850px' }}>
                      {this.state.cities.map((cities, index)=> (
                        <Item key={index}>
@@ -209,8 +210,6 @@ class NewCity extends Component {
                     	</Item>
                     	))}
                     </Item.Group>
-                                   
-                  </Segment>
             </Container>
         )
     }

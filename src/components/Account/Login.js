@@ -37,7 +37,7 @@ class Login extends Component {
 
     render() {
         return (
-        <Container  style={{ width: '450px', marginBottom: '400px', marginTop: '100px' }}>
+        <Container  style={{ width: '450px', marginBottom: '450px', marginTop: '100px' }}>
             <Message style={{borderRadius:'0px'}}
                 attached
                 icon="privacy"

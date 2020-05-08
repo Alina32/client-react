@@ -3,7 +3,7 @@
   --menuBg: rgba(102, 153, 171);
   --progressBar: #1bd9fa;
   --footerBg: rgba(102, 153, 171);
-  --footerMenuBg:rgba(102, 153, 171,0.7);
+  --footerMenuBg:rgba(102, 153, 171);
 }
 
 body{
@@ -234,16 +234,11 @@ h2 > span:after {
   outline: none;
 }
 
-footer {
-    width: 100%;
-    height: auto;
-    margin-top: 50px;
-    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3));
-    background-color: var(--footerBg);
-    
-}
+
+
 .footer-navigation {
     width: 100%;
+     margin-top: 50px;
     padding-top: 10px;
     border-bottom: 1px solid;
     border-color: rgba(225, 225, 225, 0.2);
@@ -278,6 +273,11 @@ footer {
     cursor: pointer;
 }
 .copyright {
+    width: 100%;
+    height: auto;
+  
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+    background-color: var(--footerBg);
     margin: 0 auto;
     padding-top: 30px;
     padding-bottom: 30px;

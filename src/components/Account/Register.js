@@ -38,7 +38,7 @@ class Register extends Component {
     render () {
         return (
             
-            <Container  style={{ width: '450px', marginBottom: '400px', marginTop: '80px' }}>
+            <Container  style={{ width: '450px', marginBottom: '500px', marginTop: '80px' }}>
                 <Message style={{borderRadius:'0px'}}
                     attached
                     icon="settings"
