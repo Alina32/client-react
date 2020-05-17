@@ -23,33 +23,33 @@ export default class Moreinfo extends Component {
           onClick={this.handleClick}
         >
           <Icon name='dropdown' />
-            <span className="moreinfo" >Подробнее о номере</span>
+            <span className="moreinfo" >Детальніше про номер</span>
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 1}>
           <Table style={{border: 'none'}}>
             <Table.Body>
               <Table.Row>
-                <Table.Cell width='one'><h4>Описание номера</h4></Table.Cell>
+                <Table.Cell width='one'><h5>Опис номера</h5></Table.Cell>
                 <Table.Cell width="two">
-                  <span className="descroom">Двухместные апартаменты с двуспальной кроватью.</span>
+                  <span className="descroom">Двомісні апартаменти з двоспальним ліжком.</span>
                 </Table.Cell>
               </Table.Row>
               <Table.Row>
-                <Table.Cell><h4>Тип спальных мест</h4></Table.Cell>
+                <Table.Cell><h5>Тип спальних месць</h5></Table.Cell>
                 <Table.Cell>
                     <span className="descroom">Двуспальная кровать</span>
                 </Table.Cell>
               </Table.Row>
               <Table.Row>
-                <Table.Cell><h4>Ванная комната</h4></Table.Cell>
+                <Table.Cell><h5>Ванна кімната</h5></Table.Cell>
                 <Table.Cell>
-                  <span className="descroom">Фен, Туалетные принадлежности, Туалет, Ванная комната в номере, Тапочки, Умывальник, Душевая кабина</span>
+                  <span className="descroom">Фен, Туалет, Ванна кімната в номері, Тапочки, Умивальник, Душова кабіна</span>
                 </Table.Cell>
               </Table.Row>
               <Table.Row>
-                <Table.Cell><h4>Удобства</h4></Table.Cell>
+                <Table.Cell><h5>Удобства</h5></Table.Cell>
                 <Table.Cell>
-                  <span className="descroom"> Электрический чайник, Кондиционер, Холодильник, Рабочий стол, Гостиный уголок, Микроволновая печь, Стиральная машина, Кухня в номере, Москитная сетка, Газовая / Электрическая плита, Кухонные принадлежности, Шкаф / Гардероб, Вешалка для одежды, Утюг, Гладильная доска, Отдельный вход в номер, Обеденная зона.</span>
+                  <span className="descroom"> Електричний чайник, Кондиціонер, Холодильник, Робочий стіл, Гостьовий куток, Мікрохвильова піч, пральна машина, Кухня в номері, сітка від Газова / Електрична плита, Кухонні приналежності, Шафа / Гардероб, Вішак для одягу, Праска, Електронні книги, окремий вхід в номер, Обідня зона.</span>
                 </Table.Cell>
               </Table.Row>
             </Table.Body>

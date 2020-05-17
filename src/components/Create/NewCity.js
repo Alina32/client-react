@@ -35,9 +35,10 @@ class NewCity extends Component {
                 {
                     name: '',
                     description: '',
-                   	image: '',
+                    image: '',
                     cities: [...data]
                 },
+
                 () => {
                     console.log(this.state.cities)
                 }
@@ -47,9 +48,6 @@ class NewCity extends Component {
 
     onSubmit = e => {
         e.preventDefault()
-       /* const data = new FormData() 
-            data.append('file', this.state.image)*/
-        
         addCities(this.state.name, this.state.description, this.state.image).then(() => {
             this.getCities()
         })
@@ -58,7 +56,6 @@ class NewCity extends Component {
             description: '',
             image: '',
         })
-        
     }
 
     onUpdate = e => {
@@ -71,18 +68,10 @@ class NewCity extends Component {
         })
     }
 
-    onChangeHandler=event=>{
-       this.setState({
-         image: event.target.files[0]
-
-       })
-       console.log(event.target.files[0]);
-     }
-
     onEdit = (citiesid, e) => {
         e.preventDefault()
 
-        let data = [...this.state.cities]
+        var data = [...this.state.cities]
         data.forEach((cities, index) => {
             if (cities.id === citiesid) {
                 this.setState({
@@ -100,7 +89,7 @@ class NewCity extends Component {
         e.preventDefault()
         deleteCities(val)
 
-        let data = [...this.state.cities]
+        var data = [...this.state.cities]
         data.filter(function(cities, index) {
             if (cities.id === val) {
                 data.splice(index, 1)
@@ -112,21 +101,21 @@ class NewCity extends Component {
 
     render() {
         return (
-        <Container style={{width:'800px', marginBottom: '100px', marginTop: '80px'}}>
+        <Container style={{width:'800px', marginBottom: '100px'}}>
          
             <Message style={{borderRadius:'0px'}}
                 attached
                 icon="settings"
-                header="Добавить город"
-                content="Вы можете добавить новый город или отредактировать запись"
-                color="white"
+                header="Додати місто"
+                content="Ви можете додати нове місто або відредагувати запис"
+               
             />
            
-                <Form className='attached fluid segment' onSubmit={this.onSubmit}>
+                <Form className='attached fluid segment' style={{ marginBottom: '20px'}} onSubmit={this.onSubmit}>
                 
                 	<Form.Field
                 		control={Input}
-                	    placeholder="Название"
+                	    placeholder="Назва"
                 	    name="name"
                 	    type="text"
                 	    value={this.state.name || ''}
@@ -137,18 +126,18 @@ class NewCity extends Component {
                 	   	   control={TextArea}
                 	       name="description"
                 	       type="text"
-                	       placeholder="Описание"
+                	       placeholder="Опис"
                 	       value={this.state.description || ''}
                 	       onChange={this.onChange.bind(this)}             	       
                 	    />
 
                 	    <Form.Field
                 	    	control={Input}
-                	        placeholder="Ссылка изображения"
+                	        placeholder="Посилання на зображення"
                 	        name="image"
-                	        type="file"
-                	        value=''
-                	        onChange={this.onChangeHandler.bind(this)}
+                	        type="text"
+                	        value={this.state.image || ''}
+                	        onChange={this.onChange.bind(this)}
                 	      />
 
                     
@@ -157,7 +146,7 @@ class NewCity extends Component {
 			                	control={Button}
 			      			    type="submit"
 			      			    color="instagram"
-			      			    content="Добавить"
+			      			    content="Додати"
 			      			    onClick={this.onSubmit.bind(this)}
 		      				/>
                         
@@ -169,7 +158,7 @@ class NewCity extends Component {
 			                	control={Button}
 			      			    type="submit"
 			      			    color="instagram"
-			      			    content="Обновить"
+			      			    content="Оновити"
 			      			    onClick={this.onUpdate.bind(this)}
 		      				/>
                         

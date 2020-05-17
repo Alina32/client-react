@@ -6,7 +6,7 @@ export default class TopHotels extends Component {
     
     return (
       <div className="hotels-container">  
-        <h2><span>лучшие отели</span></h2>
+        <h2><span>найкращі готелі</span></h2>
         <div className="top-hotels">
           <div className="hotel">
             <div className="photo">

@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
 
 import Navbar from './components/Account/Navbar';
-import Sidebar from './components/Hotels/Sidebar';
+import HotelsPage from './components/Hotels/HotelsPage';
+import Rooms from './components/Rooms/Rooms';
 import Footer from './components/Index/Footer';
 import Home from './components/Home';
 import NewCity from './components/Create/NewCity';
+import NewHotel from './components/Create/NewHotel';
 import Login from './components/Account/Login';
 import Register from './components/Account/Register';
 import Profile from './components/Account/Profile';
@@ -21,8 +23,10 @@ class App extends Component {
           <Navbar />
           <Route exact path="/" component={Home} />      
           <Container style={{ width: '1200px' }}>
-            <Route exact path="/hotels" component={Sidebar} />
-            <Route exact path="/createcities" component={NewCity} />
+            <Route exact path="/hotels" component={HotelsPage} />
+            <Route exact path="/hotels/:id" component={Rooms} />
+            <Route exact path="/create-cities" component={NewCity} />
+            <Route exact path="/create-hotels" component={NewHotel} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/profile" component={Profile} />

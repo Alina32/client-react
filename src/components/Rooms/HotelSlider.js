@@ -8,7 +8,9 @@ export default class HotelSlider extends Component {
     super(props);
     this.state = {
       nav1: null,
-      nav2: null
+      nav2: null,
+      name: null,
+      raiting: null,
     };
   }
 
@@ -21,9 +23,9 @@ export default class HotelSlider extends Component {
 
   render() {
     return (
-    <Segment style={{borderRadius:'0px', width:'800px', paddingLeft:'100px', paddingRight:'100px'}}>
-      <Item.Header as='h1'>Radisson Blue
-        <Rating defaultRating={4} maxRating={4} disabled />
+    <Segment style={{borderRadius:'0px', width:'900px', paddingLeft:'50px', paddingRight:'50px'}}>
+      <Item.Header as='h1'>{this.props.name}
+        <Rating defaultRating={this.props.raiting} maxRating={this.props.raiting} disabled />
       </Item.Header>
       <div className="full">
         <Slider

@@ -14,11 +14,11 @@ class Navbar extends Component {
     const loginRegLink = (
      <>
           <Link to="/login" id="linkmenu">
-            <Menu.Item  name='ВХОД'/>
+            <Menu.Item  name='ВХІД'/>
           </Link>
   
           <Link to="/register" id="linkmenu">
-            <Menu.Item  name='РЕГИСТРАЦИЯ' 
+            <Menu.Item  name='РЕЄСТРАЦІЯ' 
             />
           </Link>
      </>     
@@ -31,7 +31,7 @@ class Navbar extends Component {
           </Link>
    
           <Link to="" onClick={this.logOut.bind(this)} id="linkmenu">
-            <Menu.Item  name='ВЫХОД'/>
+            <Menu.Item  name='ВИХІД'/>
           </Link>
       </>
     )
@@ -46,15 +46,18 @@ class Navbar extends Component {
         </Link>
 
         <Link to="/" id="linkmenu">
-          <Menu.Item  name='ГЛАВНАЯ'/>
+          <Menu.Item  name='ГОЛОВНА'/>
         </Link>
 
-        <Link to="hotels" id="linkmenu">
-          <Menu.Item  name='ОТЕЛИ'/>
+        <Link to="/hotels" id="linkmenu">
+          <Menu.Item  name='ГОТЕЛІ'/>
         </Link>
 
-        <Link to="createcities" id="linkmenu">
-          <Menu.Item  name='ДОБАВИТЬ ГОРОД'/>
+        <Link to="create-cities" id="linkmenu">
+          <Menu.Item  name='ДОДАТИ МІСТО'/>
+        </Link>
+        <Link to="create-hotels" id="linkmenu">
+          <Menu.Item  name='ДОДАТИ ГОТЕЛЬ'/>
         </Link>
         
 
@@ -62,7 +65,7 @@ class Navbar extends Component {
 
          <Menu.Item position='right'>
             <Form>
-                <input name="s" placeholder="город или отель..." type="search"/>
+                <input name="s" placeholder="місто або готель..." type="search"/>
                 <button id="search-button" type="submit"></button>
              </Form>
         </Menu.Item>      

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import TopHotels from './Index/TopHotels';
+import Cityslider from './Index/Cityslider';
 
 
 
@@ -9,7 +10,7 @@ class Home extends Component {
     return (
       <>
       	
-       
+       <Cityslider />
         <TopHotels />
       </>
     )

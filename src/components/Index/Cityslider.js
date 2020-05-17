@@ -84,7 +84,7 @@ export default class Cityslider extends Component {
     } else {
       return (
         <Container style={{ width: '1200px' }}>  
-        <h2><span>города украины</span></h2> 
+        <h2><span>міста україни</span></h2> 
          <div className="main">  
            <div className="city">
            <Slider {...settings}>

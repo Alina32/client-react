@@ -46,7 +46,7 @@ class Register extends Component {
                     content="Создайте новый аккаунт"
                     color="white"
                 />
-                    <Form className='attached fluid segment' noValidate onSubmit={this.onSubmit}>
+                    <Form className='attached fluid segment' onSubmit={this.onSubmit}>
                         <Form.Input
                             fluid
                             icon="user"
