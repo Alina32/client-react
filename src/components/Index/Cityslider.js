@@ -95,7 +95,7 @@ export default class Cityslider extends Component {
             <div className="text">
               <h3>{ cities.name }</h3>
               <p>{ cities.description }</p>
-              <span>20 отелей</span>
+              <span>Готелів: {cities.hotels.length}</span>
             </div>
           </div>
 

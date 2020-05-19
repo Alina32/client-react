@@ -4,7 +4,7 @@ import { Container } from 'semantic-ui-react';
 
 import Navbar from './components/Account/Navbar';
 import HotelsPage from './components/Hotels/HotelsPage';
-import Rooms from './components/Rooms/Rooms';
+import HotelPage from './components/Rooms/HotelPage';
 import Footer from './components/Index/Footer';
 import Home from './components/Home';
 import NewCity from './components/Create/NewCity';
@@ -24,7 +24,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />      
           <Container style={{ width: '1200px' }}>
             <Route exact path="/hotels" component={HotelsPage} />
-            <Route exact path="/hotels/:id" component={Rooms} />
+            <Route exact path="/hotels/:id" component={HotelPage} />
             <Route exact path="/create-cities" component={NewCity} />
             <Route exact path="/create-hotels" component={NewHotel} />
             <Route exact path="/register" component={Register} />

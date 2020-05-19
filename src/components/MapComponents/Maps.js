@@ -23,7 +23,7 @@ export class Maps extends Component {
       height: "200px",
     };
     return (
-      <div style={{width:'900px', height:'200px', marginBottom:"5px"}}>
+      <div style={{width:'900px', height:'200px', marginBottom:"20px"}}>
         
 
         <Map

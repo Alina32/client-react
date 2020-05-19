@@ -2,7 +2,13 @@ import React, { Component } from 'react'
 import { Accordion, Icon, Header, Table} from 'semantic-ui-react'
 
 export default class Moreinfo extends Component {
-  state = { activeIndex: 0 }
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeIndex: 0,
+    };
+  }
+
 
   handleClick = (e, titleProps) => {
     const { index } = titleProps
@@ -31,25 +37,25 @@ export default class Moreinfo extends Component {
               <Table.Row>
                 <Table.Cell width='one'><h5>Опис номера</h5></Table.Cell>
                 <Table.Cell width="two">
-                  <span className="descroom">Двомісні апартаменти з двоспальним ліжком.</span>
+                  <span className="descroom">{this.props.description}</span>
                 </Table.Cell>
               </Table.Row>
               <Table.Row>
-                <Table.Cell><h5>Тип спальних месць</h5></Table.Cell>
+                <Table.Cell><h5>Тип спальних місць</h5></Table.Cell>
                 <Table.Cell>
-                    <span className="descroom">Двуспальная кровать</span>
+                    <span className="descroom">{this.props.berth}</span>
                 </Table.Cell>
               </Table.Row>
               <Table.Row>
                 <Table.Cell><h5>Ванна кімната</h5></Table.Cell>
                 <Table.Cell>
-                  <span className="descroom">Фен, Туалет, Ванна кімната в номері, Тапочки, Умивальник, Душова кабіна</span>
+                  <span className="descroom">{this.props.bathroom}</span>
                 </Table.Cell>
               </Table.Row>
               <Table.Row>
                 <Table.Cell><h5>Удобства</h5></Table.Cell>
                 <Table.Cell>
-                  <span className="descroom"> Електричний чайник, Кондиціонер, Холодильник, Робочий стіл, Гостьовий куток, Мікрохвильова піч, пральна машина, Кухня в номері, сітка від Газова / Електрична плита, Кухонні приналежності, Шафа / Гардероб, Вішак для одягу, Праска, Електронні книги, окремий вхід в номер, Обідня зона.</span>
+                  <span className="descroom">{this.props.comfort}</span>
                 </Table.Cell>
               </Table.Row>
             </Table.Body>

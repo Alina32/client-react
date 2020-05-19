@@ -23,7 +23,7 @@ export default class HotelSlider extends Component {
 
   render() {
     return (
-    <Segment style={{borderRadius:'0px', width:'900px', paddingLeft:'50px', paddingRight:'50px'}}>
+    <Segment style={{borderRadius:'0px', width:'900px', paddingLeft:'80px', paddingRight:'80px'}}>
       <Item.Header as='h1'>{this.props.name}
         <Rating defaultRating={this.props.raiting} maxRating={this.props.raiting} disabled />
       </Item.Header>
@@ -33,23 +33,23 @@ export default class HotelSlider extends Component {
           ref={slider => (this.slider1 = slider)}
         >
           <div className="fl">
-                    <div className="image-fl"><img src="http://i.piccy.info/i9/8acef96c994f930ebd4f4203cb392822/1586587352/565820/1372283/radisson.jpg" alt=""/></div>
+                    <div className="image-fl"><img src={this.props.image1} alt=""/></div>
                   </div>
 
                   <div className="fl">
-                    <div className="image-fl"><img src="https://radisson-blu-kiev.kievhotel.net/data/Photos/r1920x1080/9693/969302/969302848.JPEG" alt=""/></div>
+                    <div className="image-fl"><img src={this.props.image2} alt=""/></div>
                   </div>
 
                   <div className="fl">
-                    <div className="image-fl"><img src="https://hotels.anywayanyday.com/hotelimages_new/c8/39/29/3da927/31BE3D_6213_z.jpg" alt=""/></div>
+                    <div className="image-fl"><img src={this.props.image3} alt=""/></div>
                   </div>
 
                   <div className="fl">
-                    <div className="image-fl"><img src="https://media-cdn.tripadvisor.com/media/photo-s/07/fb/ca/1c/radisson-blu-hotel-kyiv.jpg" alt=""/></div>
+                    <div className="image-fl"><img src={this.props.image4} alt=""/></div>
                   </div>
 
                   <div className="fl">
-                    <div className="image-fl"><img src="https://www.green-tour.com.ua/userfiles/catalog/5422d70f3f5a7.jpg" alt=""/></div>
+                    <div className="image-fl"><img src={this.props.image5} alt=""/></div>
                   </div>
         </Slider>
         </div>
@@ -62,23 +62,23 @@ export default class HotelSlider extends Component {
           focusOnSelect={true}
         >
          <div className="pw">
-                  <div className="image-pw"><img src="http://i.piccy.info/i9/8acef96c994f930ebd4f4203cb392822/1586587352/565820/1372283/radisson.jpg" alt=""/></div>
+                  <div className="image-pw"><img src={this.props.image1} alt=""/></div>
                 </div>
 
                 <div className="pw">
-                  <div className="image-pw"><img src="https://radisson-blu-kiev.kievhotel.net/data/Photos/r1920x1080/9693/969302/969302848.JPEG" alt=""/></div>
+                  <div className="image-pw"><img src={this.props.image2} alt=""/></div>
                 </div>
 
                 <div className="pw">
-                  <div className="image-pw"><img src="https://hotels.anywayanyday.com/hotelimages_new/c8/39/29/3da927/31BE3D_6213_z.jpg" alt=""/></div>
+                  <div className="image-pw"><img src={this.props.image3} alt=""/></div>
                 </div>
 
                 <div className="pw">
-                  <div className="image-pw"><img src="https://media-cdn.tripadvisor.com/media/photo-s/07/fb/ca/1c/radisson-blu-hotel-kyiv.jpg" alt=""/></div>
+                  <div className="image-pw"><img src={this.props.image4} alt=""/></div>
                 </div>
 
                 <div className="pw">
-                  <div className="image-pw"><img src="https://www.green-tour.com.ua/userfiles/catalog/5422d70f3f5a7.jpg" alt=""/></div>
+                  <div className="image-pw"><img src={this.props.image5} alt=""/></div>
                 </div>
         </Slider>
         </div>
