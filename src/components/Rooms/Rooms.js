@@ -9,12 +9,9 @@ export default class Rooms extends Component {
         this.state = {
             count: this.props.room.price,
             night: 1
-          }
-
-          
+          }        
     };
   
-
   _click_plus = () => {
             this.setState({
               count: this.state.count + this.props.room.price
@@ -56,7 +53,9 @@ export default class Rooms extends Component {
                 <Item.Content>
                   <Statistic size='tiny' floated='right'>
                       <Statistic.Value>{this.state.count}<span className='price'>грн</span></Statistic.Value>
-                      <Statistic.Label><Button icon='minus' onClick={this._click_minus} size= 'mini'/> {this.state.night} ніч <Button icon='plus' onClick={this._click_plus} size= 'mini'/></Statistic.Label>
+                      <Statistic.Label><Button icon='minus' onClick={this._click_minus} size= 'mini'/> 
+                        {this.state.night} ніч <Button icon='plus' onClick={this._click_plus} size= 'mini'/>
+                      </Statistic.Label>
                       
                   </Statistic>
 
@@ -70,7 +69,7 @@ export default class Rooms extends Component {
                   </List>    
                  
             
-                    <Button color='brown' floated='right'>
+                    <Button color='brown' floated='right' href={'/booking' }>
                         Забронювати <Icon name='right chevron' />
                     </Button>
                 

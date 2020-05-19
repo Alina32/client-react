@@ -9,13 +9,15 @@ import {
   Item,
   Container,
   List,
+  Icon,
   Segment,
   Sidebar,
   Responsive,
 } from 'semantic-ui-react'
 
-const VerticalSidebar = ({ animation, direction, visible, onChangeFilterStars, onChangeFilterPrice, onChangeSortBy, sortBy }) => {
+const VerticalSidebar = ({ animation, direction, visible, onChangeFilterStars, onChangeFilterPrice, onChangeSortBy,  onChangeSortBylower, sortBy, sortBylower }) => {
 
+ 
   return <Sidebar
     animation={animation}
     direction={direction}
@@ -51,8 +53,9 @@ const VerticalSidebar = ({ animation, direction, visible, onChangeFilterStars, o
         <Item.Content>
           <Header as='h3' color='brown' block style={{ width: '100%', border: 'none', borderRadius: '0px' }}>Сортувати по</Header>
           <List floated='left' style={{ marginLeft: '10px' }} >
+            <List.Item><Checkbox label='спочатку дорожчі' value={'price'} checked={sortBy === 'price'} onChange={onChangeSortBy} /></List.Item>
+            <List.Item><Checkbox label='спочатку дешевші' value={'price'} checked={sortBylower === 'price'} onChange={onChangeSortBylower} /></List.Item>
             <List.Item><Checkbox label='зірки' value={'raiting'} checked={sortBy === 'raiting'} onChange={onChangeSortBy} /></List.Item>
-            <List.Item><Checkbox label='ціна' value={'price'} checked={sortBy === 'price'} onChange={onChangeSortBy} /></List.Item>
             <List.Item><Checkbox label='рейтінг' value={'statistic'} checked={sortBy === 'statistic'} onChange={onChangeSortBy} /></List.Item>
           </List>
         </Item.Content>
@@ -69,11 +72,11 @@ VerticalSidebar.propTypes = {
 
 
 function SetFireButton(props) {
-  return (<button className="sidebar-visible" onClick={props.onClick}>Скрыть</button>);
+  return (<button className="sidebar-visible" onClick={props.onClick}><Icon name='right chevron' /></button>);
 };
 
 function SnuffOutButton(props) {
-  return (<button className="sidebar-visible" onClick={props.onClick}>Показать</button>);
+  return (<button className="sidebar-visible" onClick={props.onClick}><Icon name='chevron left' /></button>);
 };
 
 export default class SidebarTransitions extends Component {
@@ -88,12 +91,12 @@ export default class SidebarTransitions extends Component {
         stars: []
       },
       sortBy: '',
+      sortBylower: '',
       filteredHotels: [],
       animation: 'push',
       direction: 'left',
       visible: true,
       isBurning: true,
-      visible: true
     }
     this.onSetFire = this.onSetFire.bind(this);
     this.onSnuffOut = this.onSnuffOut.bind(this);
@@ -184,6 +187,22 @@ export default class SidebarTransitions extends Component {
     this.setState({ filteredHotels, sortBy });
   }
 
+  onChangeSortBylower = (e, data) => {
+    const { value } = data;
+    let { hotels, filteredHotels, filteredState, sortBylower } = this.state;
+    if (sortBylower === value) {
+      filteredHotels = [...hotels];
+      sortBylower = '';
+    } else {
+      sortBylower = value;
+      filteredHotels = (filteredState['stars'].length && filteredState['price'].length) ? filteredHotels : hotels;
+      filteredHotels.map(second => console.log(second[value]))
+      filteredHotels.sort((first, second) => first[value] - second[value])
+      filteredHotels.map(second => console.log(second[value]))
+    }
+    this.setState({ filteredHotels, sortBylower });
+  }
+
   handleAnimationChange = (animation) => () =>
     this.setState((prevState) => ({ animation, visible: !prevState.visible }));
 
@@ -201,7 +220,8 @@ export default class SidebarTransitions extends Component {
       hotels,
       filteredHotels,
       filteredState,
-      sortBy
+      sortBy,
+      sortBylower,
     } = this.state;
     const vertical = direction === 'bottom' || direction === 'top';
     const isBurning = this.state.isBurning;
@@ -212,14 +232,14 @@ export default class SidebarTransitions extends Component {
     } else {
       button = <SetFireButton onClick={this.onSetFire} />
     }
-
+    
     return (
       <div>
         <Responsive {...Responsive.onlyMobile}>
-          <Button style={{ borderRadius: '0px', padding: '0px', height: '40px', width: '200px' }} onClick={this.handleAnimationChange('push')}>{button}</Button>
+          <Button style={{ borderRadius: '0px', padding: '0px', height: '40px', width: '50px' }} onClick={this.handleAnimationChange('push')}>{button}</Button>
         </Responsive>
         <Responsive {...Responsive.onlyTablet}>
-          <Button style={{ borderRadius: '0px', padding: '0px', height: '40px', width: '200px' }} onClick={this.handleAnimationChange('push')}>{button}</Button>
+          <Button style={{ borderRadius: '0px', padding: '0px', height: '40px', width: '50px' }} onClick={this.handleAnimationChange('push')}>{button}</Button>
         </Responsive>
 
         <Sidebar.Pushable as={Segment} style={{ borderRadius: '0px', minHeight: '570px' }}>
@@ -231,7 +251,9 @@ export default class SidebarTransitions extends Component {
               onChangeFilterStars={this.onChangeFilterStars.bind(this)}
               onChangeFilterPrice={this.onChangeFilterPrice.bind(this)}
               onChangeSortBy={this.onChangeSortBy.bind(this)}
+              onChangeSortBylower={this.onChangeSortBylower.bind(this)}
               sortBy={sortBy}
+              sortBylower={sortBylower}
             />
           )}
 

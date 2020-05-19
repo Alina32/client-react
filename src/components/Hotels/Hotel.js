@@ -20,12 +20,13 @@ export default ({ error, isLoaded, hotels }) => {
 								<Statistic.Label id="statistic-label">{hotels.statistic_label}</Statistic.Label>
 							</Statistic>
 
-							<Item.Header as='a'>{hotels.name}
+							<Item.Header as='a' href={'/hotels/' + hotels.id}>{hotels.name}
 								<Rating defaultRating={hotels.raiting} maxRating={hotels.raiting} disabled />
 
 							</Item.Header>
 
 							<Item.Meta>
+								<p><Icon name='marker' />{hotels.address}</p>
 								<span className='price'>от {hotels.price} грн</span>
 							</Item.Meta>
 
@@ -38,8 +39,8 @@ export default ({ error, isLoaded, hotels }) => {
 								<Popup content='Ресторан' trigger={<Button size='mini' icon='food' />} />
 							</Item.Extra>
 
-							<Button color='brown' floated='right'>
-								Забронювати <Icon name='right chevron' />
+							<Button color='brown' floated='right' href={'/hotels/' + hotels.id}>
+								Детальніше <Icon name='right chevron' />
 							</Button>
 
 						</Item.Content>

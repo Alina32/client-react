@@ -12,6 +12,7 @@ import NewHotel from './components/Create/NewHotel';
 import Login from './components/Account/Login';
 import Register from './components/Account/Register';
 import Profile from './components/Account/Profile';
+import Booking from './components/Booking/Booking';
 
 
 
@@ -25,6 +26,7 @@ class App extends Component {
           <Container style={{ width: '1200px' }}>
             <Route exact path="/hotels" component={HotelsPage} />
             <Route exact path="/hotels/:id" component={HotelPage} />
+            <Route exact path="/booking" component={Booking} />
             <Route exact path="/create-cities" component={NewCity} />
             <Route exact path="/create-hotels" component={NewHotel} />
             <Route exact path="/register" component={Register} />

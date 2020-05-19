@@ -9,14 +9,14 @@ export default class Footer extends Component {
       		
       			<div className="about-us">
       			        <ul>
-      			          <li><a href ="#"><i className="fa fa-info" aria-hidden="true"></i> о нас</a></li>
+      			          <li><a href ="#"><i className="fa fa-info" aria-hidden="true"></i> про нас</a></li>
       			          <li><a href ="#"><i className="fa fa-question" aria-hidden="true"></i> faq</a></li>
       			        </ul>
       			 </div>
       			 <div className="service">
       			        <ul>
-      			             <li><a href ="#"><i className="fa fa-map-marker" aria-hidden="true"></i> города</a></li>
-                          <li><i className="fa fa-home" aria-hidden="true"></i> отели</li>
+      			             <li><a href ="#"><i className="fa fa-map-marker" aria-hidden="true"></i> міста</a></li>
+                          <li><i className="fa fa-home" aria-hidden="true"></i> готелі</li>
       			        </ul>
       			 </div>
       			 <div className="social">
